@@ -26,6 +26,12 @@ do
   rm -f .$i
 done
 
+if [[ ! -x `which carton` ]]; then
+  sudo yum install cpanminus
+  cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+  sudo cpanm Carton
+fi
+
 popd
 popd
 carton install
