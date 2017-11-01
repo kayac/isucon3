@@ -14,7 +14,7 @@ mv 30days_album_yapcasia_6/photo/large/*.jpg "$IMAGE_DIR"
 unzip -o archive_o1.zip
 mv 30days_album_yapcasia_6/photo/original/*.jpg "$IMAGE_DIR"
 
-wget -O iconset-addictive-flavour-set.zip http://media.smashingmagazine.com/wp-content/uploads/images/addictive-flavour-v3/iconset-addictive-flavour-set.zip
+wget -O iconset-addictive-flavour-set.zip https://www.smashingmagazine.com/wp-content/uploads/images/addictive-flavour-v3/iconset-addictive-flavour-set.zip
 unzip -o iconset-addictive-flavour-set.zip
 mv "png files"/*.png "$IMAGE_DIR"
 
@@ -25,6 +25,13 @@ do
   convert -geometry 2400x2400 .$i $i
   rm -f .$i
 done
+
+if [[ ! -x `which carton` ]]; then
+  sudo yum install -y cpanminus
+  cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+  sudo cpanm Carton
+  export PATH=$PATH:/usr/local/bin
+fi
 
 popd
 popd

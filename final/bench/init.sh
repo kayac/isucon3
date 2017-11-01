@@ -13,5 +13,8 @@ git checkout .  # restore default.png
 popd
 
 pushd ../webapp/perl
+
+
+[[ ! -x `which carton` ]] && export PATH=$PATH:/usr/local/bin
 carton install
 carton exec perl ../../bench/bulkloader.pl "$IMAGE_DIR"
