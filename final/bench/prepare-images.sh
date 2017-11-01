@@ -14,7 +14,7 @@ mv 30days_album_yapcasia_6/photo/large/*.jpg "$IMAGE_DIR"
 unzip -o archive_o1.zip
 mv 30days_album_yapcasia_6/photo/original/*.jpg "$IMAGE_DIR"
 
-wget -O iconset-addictive-flavour-set.zip http://media.smashingmagazine.com/wp-content/uploads/images/addictive-flavour-v3/iconset-addictive-flavour-set.zip
+wget -O iconset-addictive-flavour-set.zip https://www.smashingmagazine.com/wp-content/uploads/images/addictive-flavour-v3/iconset-addictive-flavour-set.zip
 unzip -o iconset-addictive-flavour-set.zip
 mv "png files"/*.png "$IMAGE_DIR"
 
